@@ -1,29 +1,33 @@
 import pin from "../images/location.svg";
-import photo from "../images/ksc.png";
 
-export default function Card() {
+export default function Card(props) {
+    let cardBorder
+    if (props.item.id !== 3){
+        cardBorder = <hr className="cardLine" />
+    }
   return (
     <div>
       <div className="card">
-        <img src={photo} alt="attraction" className="cardPhoto" />
+        <img src={require(`../images/${props.item.imageUrl}`)} alt="attraction" className="cardPhoto" />
         <div className="cardStats">
           <div>
             <img src={pin} alt="location pin" className="cardPin" />
-            <span className="cardLocation">location</span>
+            <span className="cardLocation">{props.item.location}</span>
             <span className="cardGoogleMaps">View on Google Maps</span>
           </div>
           <div className="cardTitle">
-            <span>Attraction</span>
+            <span>{props.item.title}</span>
           </div>
           <div className="cardDate">
-            <span>start date - end date</span>
+            <span>{props.item.startDate} - {props.item.endDate}</span>
           </div>
           <div className="cardDescription">
-            Features historic spacecraft, IMAX shows, and bus tours of the
-            spaceport. See Space Shuttle Atlantis, an outdoor Rocket Garden, and
-            daily presentations from a veteran NASA astronaut.
+            {props.item.description}
           </div>
         </div>
+      </div>
+      <div>
+        {cardBorder}
       </div>
     </div>
   );
