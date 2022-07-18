@@ -4,24 +4,19 @@ import Navbar from "./components/Navbar";
 import Card from "./components/Card";
 
 function App() {
+  // this is where the map goes and the 
+  //      <hr className="cardLine" />
+
   return (
     <div className="App">
       <Navbar />
-      <Card />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <section className="container">
+        <Card />
+        <hr className="cardLine" />
+        <Card />
+        <hr className="cardLine" />
+        <Card />
+      </section>
     </div>
   );
 }
